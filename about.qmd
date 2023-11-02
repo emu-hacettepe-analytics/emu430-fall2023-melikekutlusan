@@ -5,26 +5,32 @@ sidebar: false
 
 # Education
 
--   B.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Industrial Engineering, Hacettepe University, Turkey, 2018 - ongoing.
 
 # Work Experience
 
 ## Employements
 
-1.  Firm xxx, position xx, year xxx
+- Turkish Airlines, Flight Analyst|PT, 2023 - ongoing
 
-2.  Firm yyy, position yyy, year yyy
 
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
+- ASELSAN, Production Planning Intern, 2022
 
-2.  Firm bbb, position yyy, year yyy
+# Voluntary Work Experience
+
+- Hacettepe Industry and System Society, Organization Unit Coordinator, 2022-2023
+- Hacettepe Industry and System Society, Chairperson of the Supervisory Board, 2023 - ongoing
 
 # Projects
 
+- MyMezun, Co-Founder, 2022
+
 # Competencies
 
-R, Quarto, Git, Python
+R, Quarto, Git, Python, Matlab, MS Office
 
 # Hobbies
+
+Solving Sudoku, Watching and Criticizing the Movies
