@@ -53,5 +53,31 @@ Python True or False with only the first letter capitalized
 ```{python}
 True,False
 ```
+# c
+
+```{r}
+
+library(dslabs)
+data ('na_example')
+print(na_example)
+
+```
+```{r}
+
+sum(is.na(na_example))
+
+```
+```{r}
+
+new_data <- ifelse(is.na(na_example), 0, na_example)
+new_data
+```
+```{r}
+
+sum(is.na(new_data))
+```
+
+
+
 
 
