@@ -46,7 +46,7 @@ f(y=7)
 
 R all caps TRUE or FALSE, or just the first letter 
 ```{r}
-c(TRUE,F,FALSE,T)
+c(TRUE,F,FALSE,T,F)
 ```
 Python True or False with only the first letter capitalized
 
