@@ -68,5 +68,12 @@
     "title": "Assignment 1",
     "section": "(b)",
     "text": "(b)"
+  },
+  {
+    "objectID": "assignments/assignment-1.html#what-is-different-between-r-and-python",
+    "href": "assignments/assignment-1.html#what-is-different-between-r-and-python",
+    "title": "Assignment 1",
+    "section": "What is different between R and Python?",
+    "text": "What is different between R and Python?\n\nCreating a range of number\nR uses a colon\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nPython uses range\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
   }
 ]
