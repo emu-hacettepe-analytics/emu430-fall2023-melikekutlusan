@@ -7,6 +7,7 @@ project:
 website:
   title: "Melike's Analytics Lab Site"
   navbar:
+    title: "Melike's Analytics Lab Site"
     search: true
     left:
       - text: Home
