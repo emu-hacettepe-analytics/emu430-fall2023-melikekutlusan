@@ -74,6 +74,6 @@
     "href": "assignments/assignment-1.html#what-is-different-between-r-and-python",
     "title": "Assignment 1",
     "section": "What is different between R and Python?",
-    "text": "What is different between R and Python?\n\nCreating a range of number\nR uses a colon\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nPython uses range\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+    "text": "What is different between R and Python?\n\nCreating a range of number\nR uses a colon\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nPython uses range\n\nlist(range(10))\n\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n\n\n\nFunctions default argument\nR allows for default arguments regardless or order\n\nf= function(x=2,y,z=5){\n  return(x+y+z)\n}\nf(y=9)\n\n[1] 16\n\n\nPython default arguments must be after non default\n\ndef f(y, x= 6,z=8):\n  return x+y+z\nf(y=7)\n\n21\n\n\n\n\nBooleans\nR all caps TRUE or FALSE, or just the first letter\n\nc(TRUE,F,FALSE,T)\n\n[1]  TRUE FALSE FALSE  TRUE\n\n\nPython True or False with only the first letter capitalized\n\nTrue,False\n\n(True, False)"
   }
 ]

@@ -27,3 +27,31 @@ Python uses range
 ```{python}
 list(range(10))
 ```
+### Functions default argument
+R allows for default arguments regardless or order
+```{r}
+f= function(x=2,y,z=5){
+  return(x+y+z)
+}
+f(y=9)
+```
+Python default arguments must be after non default
+
+```{python}
+def f(y, x= 6,z=8):
+  return x+y+z
+f(y=7)
+```
+### Booleans
+
+R all caps TRUE or FALSE, or just the first letter 
+```{r}
+c(TRUE,F,FALSE,T)
+```
+Python True or False with only the first letter capitalized
+
+```{python}
+True,False
+```
+
+
