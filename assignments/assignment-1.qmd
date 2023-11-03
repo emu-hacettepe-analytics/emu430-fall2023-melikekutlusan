@@ -8,8 +8,16 @@ title: "Assignment 1"
 1 + 1
 ```
 
-My first assignment has two parts.
+This assignment has three parts.
 
-## (a)
+#  a 
+
+I choose a video from the R Studio GLobal 2022 Conference Talk and its link is in the below
+<https://www.youtube.com/watch?v=A9QRN4cpsDY>
+
+Summary:
+
+Devin Pastoor, the speaker in the video, discusses the drawbacks of utilizing different tools for content creation and how Quarto solves these problems. Quarto provides a single toolchain for books, blogs, websites, and sophisticated content, bringing together the creation of material on several platforms. It gives you more control over the creation and arrangement of material.It was noted that Quarto's flexible content structure allowed users to rearrange the parts in the content.It was noted that Quarto's flexible content structure allowed users to rearrange the parts in the content.Devin gave an example of how Quarto can post stuff online and make it available to everyone.
+
 
 ## (b)
