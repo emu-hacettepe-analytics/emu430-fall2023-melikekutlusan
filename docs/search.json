@@ -46,7 +46,7 @@
     "href": "assignments/assignment-1.html",
     "title": "Assignment 1",
     "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
+    "text": "1 + 1\n\n[1] 2\n\n\nThis assignment has three parts."
   },
   {
     "objectID": "assignments.html",
@@ -61,5 +61,12 @@
     "title": "My Blog",
     "section": "",
     "text": "This page is under construction.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "assignments/assignment-1.html#b",
+    "href": "assignments/assignment-1.html#b",
+    "title": "Assignment 1",
+    "section": "(b)",
+    "text": "(b)"
   }
 ]
