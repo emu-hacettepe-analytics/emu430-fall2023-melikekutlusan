@@ -1,5 +1,7 @@
 project:
   type: website
+  resources: 
+    - "MELİKE NUR KUTLUSAN - CV.pdf"
   output-dir: docs
 
 website:
