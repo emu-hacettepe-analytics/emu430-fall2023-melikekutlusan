@@ -15,4 +15,15 @@ Summary:
 Devin Pastoor, the speaker in the video, discusses the drawbacks of utilizing different tools for content creation and how Quarto solves these problems. Quarto provides a single toolchain for books, blogs, websites, and sophisticated content, bringing together the creation of material on several platforms. It gives you more control over the creation and arrangement of material.It was noted that Quarto's flexible content structure allowed users to rearrange the parts in the content.It was noted that Quarto's flexible content structure allowed users to rearrange the parts in the content.Devin gave an example of how Quarto can post stuff online and make it available to everyone.
 
 
-## (b)
+# b
+## What is different between R and Python?
+### Creating a range of number
+
+R uses a colon
+```{r}
+1:10
+```
+Python uses range
+```{python}
+list(range(10))
+```
