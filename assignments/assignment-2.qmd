@@ -2,8 +2,155 @@
 title: "Assignment 2"
 ---
 
-# Assignment 2
+## Answers of the Question 1 and 2
+### Help was received from AI in some parts, especially in minute conversion.
+```{r}
+#| code-fold: true
+#| code-summary: "Click the see the code"
+#| warning: false
+library(tidyverse)
+library(rvest)
+library(stringr)
+library(knitr)
+
+
+link_1 <- "https://m.imdb.com/search/title/?title_type=feature&release_date=2010-01-01,2023-12-31&num_votes=2500,&country_of_origin=TR&count=250"
+link_2 <- "https://m.imdb.com/search/title/?title_type=feature&release_date=,2009-12-31&num_votes=2500,&country_of_origin=TR&count=250"
+
+linked <- c(link_1, link_2)
+
+convert_to_minutes <- function(duration_i) {
+  hours <- as.integer(str_extract(duration_i, "\\d+(?=h)"))  # Saatleri al
+  minutes <- as.integer(str_extract(duration_i, "\\d+(?=m)"))  # Dakikaları al
+  
+  total_minutes <- ifelse(!is.na(hours) && !is.na(minutes), hours * 60 + minutes,
+                          ifelse(!is.na(hours), hours * 60,
+                                 ifelse(!is.na(minutes), minutes,
+                                        NA)))
+  
+  return(ifelse(!is.na(total_minutes), as.character(total_minutes), ""))
+}
+
+movie_data <- data.frame(
+  Title = character(),
+  Year = integer(),
+  Duration = numeric(),
+  Rating = numeric(),
+  Votes = numeric(),
+  stringsAsFactors = FALSE)
+
+for (url in linked) {
+
+start_P=read_html(url)
+title_names <- start_P |> html_nodes('.ipc-title__text')
+title_names <- html_text(title_names)
+title_names <- tail(head(title_names,-1),-1)
+title_names <- str_split(title_names, " ", n=2)
+title_names <- unlist(lapply(title_names, function(x) {x[2]}))
+
+
+years <- start_P |> html_nodes('.dli-title-metadata-item:nth-child(1)')
+years <- html_text(years)
+years <- substring(years,1,4) %>% as.numeric(years)
+
+rating_data_html <- start_P %>% html_nodes('.ratingGroup--imdb-rating')
+rating_data <- html_text(rating_data_html)
+rating_data <- str_extract(rating_data, "\\d+\\.\\d+")
+rating_data <- as.numeric(rating_data)
+
+duration_i <- start_P %>%
+html_nodes('.dli-title-metadata-item:nth-child(2)') %>%
+html_text()
+converted_durations <- sapply(duration_i, convert_to_minutes)
+converted_durations <- as.numeric(converted_durations[!converted_durations == ""])
+
+vote<- start_P %>% html_nodes('.cyGaqI')
+vote <- html_text(vote)
+vote <- gsub("Votes","", vote)
+vote <- gsub(",","", vote)
+vote <- as.numeric(vote)
+
+current_data <- data.frame(Title = title_names, Year = years, Duration = converted_durations, Rating = rating_data,Votes = vote)
+if (any(is.na(current_data))) {
+  warning("Skipping data with missing values.")
+  next
+}
+movie_data <- bind_rows(movie_data, current_data)
+}
+
+head(movie_data)
+
+```
+
+## Question 3
+
+### (a)
 
 ```{r}
-1 + 1
+#| code-fold: true
+#| code-summary: "Click the see the code"
+#| warning: false
+sort<- movie_data %>% arrange(desc(Rating))
+top_5<-head(sort,5)
+bottom_5 <- tail(sort,5)
+print(top_5)
+print(bottom_5)
 ```
+
+Among the movies in the Top_5, I watched other movies except Cem Yılmaz's movie. I was surprised that CM101MMXI Fundamentals was ranked in the top 5 rather than second, but I think the ranking of the other 4 movies is correct.
+
+### (b)
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click the see the code"
+#| warning: false
+
+selected<- movie_data %>%
+  filter(str_to_lower(Title) %in% c("hababam sinifi", "g.o.r.a."))
+
+print(selected)
+
+```
+
+Both films were loved by a large audience in their time and are cult films.
+
+### (c)
+
+I didn't have chance to completed.
+
+### (d)
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click the see the code"
+#| warning: false
+ggplot(movie_data, aes(x = Votes, y = Rating)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Correlation between Votes and Ratings",
+       x = "Votes",
+       y = "Ratings")
+
+cor(movie_data$Votes, movie_data$Rating)
+```
+
+There is positive correlation between ratins and votes but not a strong correlation, its relatively week because the value of the correlation is 0.1318877.
+
+### (e)
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click the see the code"
+#| warning: false
+ggplot(movie_data, aes(x = Duration, y = Rating)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "orange") +
+  labs(title = "Correlation between Votes and Ratings",
+       x = "Votes",
+       y = "Ratings")
+
+cor(movie_data$Duration, movie_data$Rating)
+```
+
+There is a week positive correlation between ratings and durations because the value of the correlation is 0.03303303
